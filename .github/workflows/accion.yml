@@ -1,4 +1,4 @@
-# Workflow for building and deploying a Hugo site to Reclaim
+# 1 Workflow for building and deploying a Hugo site to Reclaim
 name: Deploy Hugo site to Reclaim production environment
 
 on:
@@ -53,6 +53,8 @@ jobs:
       - name: 🚀 Upload
         run: sshpass -p "${{ secrets.FTP_PASSWORD }}" rsync --progress -avz -e 'ssh -o StrictHostKeyChecking=no' public/ ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }}:${{ secrets.FTP_PATH}}
 
+# 2 Workflow for building and deploying a Hugo site to Reclaim
+
 # name: Deploy Hugo
 
 # on:
@@ -79,6 +81,8 @@ jobs:
 #         run: sudo apt-get install -y sshpass
 #       - name: 🚀 Upload
 #         run: sshpass -p "${{ secrets.FTP_PASSWORD }}" rsync --progress -avz -e 'ssh -o StrictHostKeyChecking=no' public/ ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }}:${{ secrets.FTP_PATH}}
+
+# 3 Workflow for building and deploying a Hugo site to Reclaim
 
 # name: Deploy Hugo Site
 
@@ -115,7 +119,8 @@ jobs:
 #       run: |
 #         rsync -avz --delete public/ ${FTP_USERNAME}@${FTP_SERVER}:/home/digitals/xyztest.digitalscholarship.brown.edu
 #         sshpass -p ${FTP_PASSWORD} rsync -avz --delete public/ ${FTP_USERNAME}@${FTP_SERVER}:/home/digitals/xyztest.digitalscholarship.brown.edu
-# # Workflow for building and deploying a Hugo site to Reclaim
+        
+# 4 Workflow for building and deploying a Hugo site to Reclaim
 # name: Deploy Hugo site to Reclaim production environment
 
 # on:
