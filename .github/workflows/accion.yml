@@ -3,7 +3,7 @@ name: Deploy Hugo Site
 on:
   push:
     branches:
-      - master  # or any other branch you want to deploy from
+      - main  # or any other branch you want to deploy from
 
 jobs:
   build-and-deploy:
