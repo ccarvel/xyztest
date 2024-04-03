@@ -27,9 +27,9 @@ jobs:
 
     - name: Deploy to Server
       env:
-        SERVER_USER: ${{ secrets.FTP_USERNAME }}
-        SERVER_PASSWORD: ${{ secrets.FTP_PASSWORD }}
-        SERVER: ${{ secrets.FTP_SERVER}}
+        FTP_USERNAME: ${{ secrets.FTP_USERNAME }}
+        FTP_PASSWORD: ${{ secrets.FTP_PASSWORD }}
+        FTP_SERVER: ${{ secrets.FTP_SERVER}}
       run: |
         rsync -avz --delete public/ ${FTP_USERNAME}@${FTP_SERVER}:/home/digitals/xyztest.digitalscholarship.brown.edu
         sshpass -p ${FTP_PASSWORD} rsync -avz --delete public/ ${FTP_USERNAME}@${FTP_SERVER}:/home/digitals/xyztest.digitalscholarship.brown.edu
