@@ -23,7 +23,8 @@ jobs:
       - name: Install sshpass
         run: sudo apt-get install -y sshpass
       - name: 🚀 Upload
-        run: sshpass -p '${{ secrets.FTP_PASSWORD }}" rsync --progress -avz -e 'ssh -o StrictHostKeyChecking=no' public/ ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }}:${{ secrets.FTP_PATH}}
+        run: sshpass -p "${{ secrets.FTP_PASSWORD }}" rsync --progress -avz -e 'ssh -o StrictHostKeyChecking=no' public/ ${{ secrets.FTP_USERNAME }}@${{ secrets.FTP_SERVER }}:${{ secrets.FTP_PATH}}
+
 # name: Deploy Hugo Site
 
 # on:
